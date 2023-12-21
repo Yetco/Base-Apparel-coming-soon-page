@@ -1,0 +1,251 @@
+:root {
+  /* ### Primary */
+
+  --Desaturated-Red: hsl(0, 36%, 70%);
+  --Soft-Red: hsl(0, 93%, 68%);
+
+  /* ### Neutral */
+
+  --Dark-Grayish-Red: hsl(0, 6%, 24%) /* ### Gradients */ - Linear, 135deg,
+    from hsl(0, 0%, 100%), to hsl(0, 100%, 98%) - Linear, 135deg,
+    from hsl(0, 80%, 86%), to hsl(0, 74%, 74%);
+}
+/*
+    1. Use a more-intuitive box-sizing model.
+  */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+    2. Remove default margin
+  */
+* {
+  margin: 0;
+  padding: 0;
+}
+/*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+  */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+    5. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+    6. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+    7. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+    8. Create a root stacking context
+  */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+body {
+  font-size: 1em;
+  font-family: "Josefin Sans", sans-serif;
+  display: grid;
+  place-content: center;
+  margin: 0 auto;
+}
+
+header {
+  margin: 2em;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column-reverse;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.female {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-two {
+  padding: 1.5em;
+  background-image: url(images/bg-pattern-desktop.svg);
+}
+
+.info {
+  text-align: center;
+  margin-top: 2em;
+}
+
+.title {
+  font-size: 2.9rem;
+  text-transform: uppercase;
+  line-height: 1;
+  margin-bottom: 0.5em;
+  letter-spacing: 13px;
+}
+
+span {
+  color: var(--Desaturated-Red);
+  font-weight: 300;
+}
+
+.p-info {
+  font-size: 0.8rem;
+  color: var(--Desaturated-Red);
+  padding-bottom: 1em;
+  line-height: 1.8;
+  margin-bottom: 1em;
+}
+
+form {
+  width: 100%;
+}
+
+.input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.arrow-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  border: none;
+  width: 80px;
+  height: 50px;
+  background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+  border-radius: 100px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow-btn:hover {
+  opacity: 0.6;
+}
+
+.email {
+  padding-bottom: 1em;
+  border: 1px solid var(--Desaturated-Red);
+  color: black;
+  border-radius: 100px;
+  width: 100%;
+  padding-left: 1em;
+  padding-top: 0.9em;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+input::placeholder {
+  color: var(--Desaturated-Red);
+}
+
+.arrow-image {
+  width: 20px;
+  height: 20px;
+  border: none;
+}
+
+.error-message {
+  color: var(--Soft-Red);
+  font-size: 0.8rem;
+  padding-top: 0.5em;
+  text-align: left;
+  margin-left: 1em;
+}
+
+.attribution {
+  font-size: 0.9em;
+  text-align: center;
+  margin-top: 2em;
+}
+
+.attribution a {
+  color: #800;
+}
+
+@media (min-width: 900px) {
+  .wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 90%;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  .female {
+    display: none;
+  }
+
+  #female-desktop {
+    background-image: url(images/hero-desktop.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+  }
+
+  .section-two {
+    padding: 1.5em;
+  }
+
+  .info {
+    text-align: left;
+    display: grid;
+    gap: 1em;
+    padding: 0 5.7em;
+    margin-top: 8em;
+    background-image: url(images/bg-pattern-desktop.svg);
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-size: cover;
+  }
+
+  .logo {
+    position: absolute;
+    /* top: 15%; */
+    /* left: 22%; */
+    margin-top: 5em;
+    margin-left: 9em;
+    width: 8em;
+  }
+
+  input {
+    background-image: url(images/bg-pattern-desktop.svg);
+  }
+}
